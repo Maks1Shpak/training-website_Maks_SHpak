@@ -7,7 +7,7 @@ function Photo() {
     { src: 'https://ukurier.gov.ua/media/images/2021-6/modello-massa-balene.jpeg', alt: 'Кит' },
     { src: 'https://unn.ua/img/2022/11/01/1700239100-1563-large.webp', alt: 'Кит' },
     { src: 'https://zn.ua/img/forall/u/14/3/%D0%BA%D0%B8%D1%82%D1%8B.jpg', alt: 'Кит' },
-    { src: 'https://babel.ua/static/content/nf3ydfsy/thumbs/660x371/c/05/7f2111cbef86a223862e0fdd2577705c.jpg?v=6979, alt: 'Кит' },
+    { src: 'https://babel.ua/static/content/nf3ydfsy/thumbs/660x371/c/05/7f2111cbef86a223862e0fdd2577705c.jpg?v=6979', alt: 'Кит' },
     { src: 'https://santmat.net.ua/wp-content/uploads/2024/01/img_3759.jpeg', alt: 'Кит' }
   ];
 
