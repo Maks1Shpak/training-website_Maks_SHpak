@@ -1,26 +1,26 @@
-/* Custom Green Theme for Rabbit Website */
-.custom-green-theme {
-  background-color: #d4d6ed; /* Light green background */
-  color: #0000CD; /* Dark green text */
+/* Custom Blue Theme for Rabbit Website */
+.custom-blue-theme {
+  background-color: #d4d6ed; /* Light blue background */
+  color: #00008B; /* Dark blue text */
 }
- 
-.custom-green-theme a.nav-link {
-  color: 	#0000FF; /* Bright green for navigation links */
+
+.custom-blue-theme a.nav-link {
+  color: #1E90FF; /* Bright blue for navigation links */
   text-decoration: none;
 }
- 
-.custom-green-theme a.nav-link:hover {
-  color: 	#0000c9; /* Darker green on hover */
+
+.custom-blue-theme a.nav-link:hover {
+  color: #0000CD; /* Darker blue on hover */
   text-decoration: underline;
 }
- 
-.custom-green-theme .list-group-item {
-  background-color: #9494ca; /* Pale green for list items */
+
+.custom-blue-theme .list-group-item {
+  background-color: #9494ca; /* Pale blue for list items */
   color: #00008d;
 }
- 
-.custom-green-theme .list-group-item:hover {
-  background-color: #8585b4; /* Slightly darker green on hover */
+
+.custom-blue-theme .list-group-item:hover {
+  background-color: #8585b4; /* Slightly darker blue on hover */
 }
 
 body {
@@ -36,10 +36,10 @@ main {
 
 footer {
   flex-shrink: 0;
-  background-color: #31105e; 
+  background-color: #161557;
   color: white;
   padding: 10px 0;
-  border-top: 5px solid #161557;
+  border-top: 5px solid #0D0D5E;
 }
 
 /* Carousel Styles */
@@ -83,7 +83,7 @@ footer {
 }
 
 .carousel-indicators button.active {
-  background-color: #155724 !important;
+  background-color: #1E90FF !important;
   opacity: 1 !important;
 }
 
@@ -104,7 +104,7 @@ footer {
 }
 
 .carousel-indicators .active {
-  background-color: #28a745;
+  background-color: #1E90FF;
   transform: scale(1.2);
   opacity: 1;
 }
