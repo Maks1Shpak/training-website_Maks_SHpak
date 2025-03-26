@@ -1,16 +1,16 @@
 /* Custom Green Theme for Rabbit Website */
 .custom-green-theme {
   background-color: #d4edda; /* Light green background */
-  color: #155724; /* Dark green text */
+  color: #0000CD; /* Dark green text */
 }
  
 .custom-green-theme a.nav-link {
-  color: #28a745; /* Bright green for navigation links */
+  color: 	#0000FF; /* Bright green for navigation links */
   text-decoration: none;
 }
  
 .custom-green-theme a.nav-link:hover {
-  color: #155724; /* Darker green on hover */
+  color: 	#0000c9; /* Darker green on hover */
   text-decoration: underline;
 }
  
@@ -36,7 +36,7 @@ main {
 
 footer {
   flex-shrink: 0;
-  background-color: #28a745; /* Green footer */
+  background-color: #31105e; 
   color: white;
   padding: 10px 0;
   border-top: 5px solid #155724;
