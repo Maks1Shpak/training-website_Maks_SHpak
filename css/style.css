@@ -1,6 +1,6 @@
 /* Custom Green Theme for Rabbit Website */
 .custom-green-theme {
-  background-color: #d4edda; /* Light green background */
+  background-color: #d4d6ed; /* Light green background */
   color: #0000CD; /* Dark green text */
 }
  
@@ -77,7 +77,7 @@ footer {
   margin: 0 12px !important;
   padding: 0 !important;
   background-clip: padding-box !important;
-  border: 2px solid #28a745 !important;
+  border: 2px solid #2846a7 !important;
   background-color: white !important;
   opacity: 0.8 !important;
 }
