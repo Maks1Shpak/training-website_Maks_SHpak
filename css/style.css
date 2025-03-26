@@ -15,12 +15,12 @@
 }
  
 .custom-green-theme .list-group-item {
-  background-color: #c3e6cb; /* Pale green for list items */
-  color: #155724;
+  background-color: #9494ca; /* Pale green for list items */
+  color: #00008d;
 }
  
 .custom-green-theme .list-group-item:hover {
-  background-color: #b1dfbb; /* Slightly darker green on hover */
+  background-color: #8585b4; /* Slightly darker green on hover */
 }
 
 body {
@@ -39,7 +39,7 @@ footer {
   background-color: #31105e; 
   color: white;
   padding: 10px 0;
-  border-top: 5px solid #155724;
+  border-top: 5px solid #161557;
 }
 
 /* Carousel Styles */
