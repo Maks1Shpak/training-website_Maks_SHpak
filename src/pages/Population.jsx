@@ -12,9 +12,9 @@ function Population() {
               <a href="#continentsList" className="nav-link" data-bs-toggle="collapse">Континенти</a>
               <a href="#subcontinentsList" className="nav-link" data-bs-toggle="collapse">Субконтиненти</a>
               <a href="#countriesList" className="nav-link" data-bs-toggle="collapse">Країни</a>
-              <a href="#introducedList" className="nav-link" data-bs-toggle="collapse">Інтродуковані в</a>
+              <a href="#introducedList" className="nav-link" data-bs-toggle="collapse">Регіони</a>
               <a href="#biogeographicList" className="nav-link" data-bs-toggle="collapse">Біогеографічні зони</a>
-              <a href="#biomesList" className="nav-link" data-bs-toggle="collapse">WWF Біоми</a>
+              <a href="#biomesList" className="nav-link" data-bs-toggle="collapse">Океани</a>
             </ul>
           </nav>
         </aside>
@@ -35,9 +35,13 @@ function Population() {
             </h3>
             <div className="collapse" id="continentsList">
               <ul className="list-group mb-3">
-                <li className="list-group-item">Європа</li>
-                <li className="list-group-item">Азія</li>
-                <li className="list-group-item">Північна Америка</li>
+                <li class="list-group-item">Африка</li>
+                <li class="list-group-item">Південна Америка</li>
+                <li class="list-group-item">Австралія і Океанія</li>
+                <li class="list-group-item">Північна Америка</li>
+                <li class="list-group-item">Азія</li>
+                <li class="list-group-item">Європа</li>
+                <li class="list-group-item">Антарктида</li>
               </ul>
             </div>
           </section>
@@ -55,8 +59,12 @@ function Population() {
             </h3>
             <div className="collapse" id="subcontinentsList">
               <ul className="list-group mb-3">
-                <li className="list-group-item">Західна Азія</li>
-                <li className="list-group-item">Центральна Азія</li>
+                <li class="list-group-item">Субсахарська Африка</li>
+                <li class="list-group-item">Карибські острови</li>
+                <li class="list-group-item">Південна Азія</li>
+                <li class="list-group-item">Східна та західна азія</li>
+                <li class="list-group-item">Центральна Америка</li>
+                <li class="list-group-item">Північна Африка</li>
               </ul>
             </div>
           </section>
@@ -74,44 +82,44 @@ function Population() {
             </h3>
             <div className="collapse" id="countriesList">
               <ul className="list-group mb-3 list-columns">
-                <li className="list-group-item">Албанія</li>
-                <li className="list-group-item">Австрія</li>
-                <li className="list-group-item">Білорусь</li>
-                <li className="list-group-item">Бельгія</li>
-                <li className="list-group-item">Боснія і Герцеговина</li>
-                <li className="list-group-item">Болгарія</li>
-                <li className="list-group-item">Хорватія</li>
-                <li className="list-group-item">Чехія</li>
-                <li className="list-group-item">Данія</li>
-                <li className="list-group-item">Естонія</li>
-                <li className="list-group-item">Фінляндія</li>
-                <li className="list-group-item">Франція</li>
-                <li className="list-group-item">Німеччина</li>
-                <li className="list-group-item">Греція</li>
-                <li className="list-group-item">Угорщина</li>
-                <li className="list-group-item">Іран</li>
-                <li className="list-group-item">Ірак</li>
-                <li className="list-group-item">Ізраїль</li>
-                <li className="list-group-item">Італія</li>
-                <li className="list-group-item">Латвія</li>
-                <li className="list-group-item">Ліхтенштейн</li>
-                <li className="list-group-item">Литва</li>
-                <li className="list-group-item">Люксембург</li>
-                <li className="list-group-item">Північна Македонія</li>
-                <li className="list-group-item">Молдова</li>
-                <li className="list-group-item">Чорногорія</li>
-                <li className="list-group-item">Нідерланди</li>
-                <li className="list-group-item">Польща</li>
-                <li className="list-group-item">Румунія</li>
-                <li className="list-group-item">Росія</li>
-                <li className="list-group-item">Сербія</li>
-                <li className="list-group-item">Словаччина</li>
-                <li className="list-group-item">Словенія</li>
-                <li className="list-group-item">Іспанія</li>
-                <li className="list-group-item">Швейцарія</li>
-                <li className="list-group-item">Сирія</li>
-                <li className="list-group-item">Туреччина</li>
-                <li className="list-group-item">Україна</li>
+                <li class="list-group-item">Ангола</li>
+                <li class="list-group-item">Аргентина</li>
+                <li class="list-group-item">Австралія</li>
+                <li class="list-group-item">Багамські острови</li>
+                <li class="list-group-item">Бангладеш</li>
+                <li class="list-group-item">Бенін</li>
+                <li class="list-group-item">Бразилія</li>
+                <li class="list-group-item">Камерун</li>
+                <li class="list-group-item">Канада</li>
+                <li class="list-group-item">Кабо-Верде</li>
+                <li class="list-group-item">Чилі</li>
+                <li class="list-group-item">КНР</li>
+                <li class="list-group-item">Колумбія</li>
+                <li class="list-group-item">Коморські острови</li>
+                <li class="list-group-item">Коста-Рика</li>
+                <li class="list-group-item">Еквадор</li>
+                <li class="list-group-item">Сальвадор</li>
+                <li class="list-group-item">Еритрея</li>
+                <li class="list-group-item">Франція</li>
+                <li class="list-group-item">Габон</li>
+                <li class="list-group-item">Гана</li>
+                <li class="list-group-item">Греція</li>
+                <li class="list-group-item">Гренада</li>
+                <li class="list-group-item">Гватемала</li>
+                <li class="list-group-item">Ісландія</li>
+                <li class="list-group-item">Індія</li>
+                <li class="list-group-item">Індонезія</li>
+                <li class="list-group-item">Іран</li>
+                <li class="list-group-item">Ірак</li>
+                <li class="list-group-item">Ірландія</li>
+                <li class="list-group-item">Японія</li>
+                <li class="list-group-item">Кенія</li>
+                <li class="list-group-item">Магадаскар</li>
+                <li class="list-group-item">Маврикій</li>
+                <li class="list-group-item">Мексика</li>
+                <li class="list-group-item">Марокко</li>
+                <li class="list-group-item">Мозамбік</li>
+                <li class="list-group-item">і ще близько 20 країн</li>
               </ul>
             </div>
           </section>
@@ -124,22 +132,13 @@ function Population() {
                       data-bs-target="#introducedList" 
                       aria-expanded="false" 
                       aria-controls="introducedList">
-                Інтродуковані види
+                Регіони
               </button>
             </h3>
             <div className="collapse" id="introducedList">
               <ul className="list-group mb-3">
-                <li className="list-group-item">Канада</li>
-                <li className="list-group-item">Сполучені Штати Америки</li>
-                <li className="list-group-item">Бразилія</li>
-                <li className="list-group-item">Чилі</li>
-                <li className="list-group-item">Аргентина</li>
-                <li className="list-group-item">Уругвай</li>
-                <li className="list-group-item">Парагвай</li>
-                <li className="list-group-item">Болівія</li>
-                <li className="list-group-item">Перу</li>
-                <li className="list-group-item">Австралія</li>
-                <li className="list-group-item">Нова Зеландія</li>
+                <li class="list-group-item">Гренландія</li>
+                <li class="list-group-item">Камчатський півострів</li>
               </ul>
             </div>
           </section>
@@ -157,10 +156,14 @@ function Population() {
             </h3>
             <div className="collapse" id="biogeographicList">
               <ul className="list-group mb-3">
-                <li className="list-group-item">Нотогея</li>
-                <li className="list-group-item">Неарктика</li>
-                <li className="list-group-item">Неотропіка</li>
-                <li className="list-group-item">Палеарктика</li>
+                <li class="list-group-item">Антарктична екозона</li>
+                <li class="list-group-item">Неотропіка</li>
+                <li class="list-group-item">Палеарктика</li>
+                <li class="list-group-item">Неарктика</li>
+                <li class="list-group-item">Нотогея</li>
+                <li class="list-group-item">Океанійська екозона</li>
+                <li class="list-group-item">Індомалайя</li>
+                <li class="list-group-item">Афротропіка</li>
               </ul>
             </div>
           </section>
@@ -173,14 +176,13 @@ function Population() {
                       data-bs-target="#biomesList" 
                       aria-expanded="false" 
                       aria-controls="biomesList">
-                Біоми WWF
+                Океани
               </button>
             </h3>
             <div className="collapse" id="biomesList">
               <ul className="list-group">
-                <li className="list-group-item">Помірні луки</li>
-                <li className="list-group-item">Савани і чагарники</li>
-                <li className="list-group-item">Субтропічний ліс</li>
+                <li class="list-group-item">Тихий океан</li>
+                <li class="list-group-item">Атлантичний океан</li>
               </ul>
             </div>
           </section>

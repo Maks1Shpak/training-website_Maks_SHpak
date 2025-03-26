@@ -15,22 +15,22 @@ const PAGES = [
   },
   {
     path: '/morphology',
-    title: 'Зовнішній вигляд зайців',
+    title: 'Зовнішній вигляд китів',
     component: Morphology
   },
   {
     path: '/nutrition',
-    title: 'Харчування зайців',
+    title: 'Харчування китів',
     component: Nutrition
   },
   {
     path: '/population',
-    title: 'Ареал зайців',
+    title: 'Ареал китів',
     component: Population
   },
   {
     path: '/photo',
-    title: 'Фотографії зайців',
+    title: 'Фотографії китів',
     component: Photo
   }
 ];

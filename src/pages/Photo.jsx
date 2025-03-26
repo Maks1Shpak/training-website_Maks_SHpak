@@ -3,18 +3,18 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Photo() {
   const images = [
-    { src: '/images/1200px-haas-in-het-grasjpg.webp', alt: 'Зайці в траві' },
-    { src: '/images/1200px-hasebeioberwerbejpg.webp', alt: 'Зайці в полі' },
-    { src: '/images/european-hare-6121jpg.webp', alt: 'Європейський заєць' },
-    { src: '/images/fFKuESpf7VTCGBNPscig.webp', alt: 'Зайці на лузі' },
-    { src: '/images/halljnes.webp', alt: 'Зайці в лісі' },
-    { src: '/images/zu6YRoYqGYVyExZ54dDT.webp', alt: 'Зайці на лузі' }
+    { src: 'https://petropavlivka.city/upload/article/o_1gor0ed5m1sck1jvl1k8313he1suq1r.jpg', alt: 'Кит' },
+    { src: 'https://ukurier.gov.ua/media/images/2021-6/modello-massa-balene.jpeg', alt: 'Кит' },
+    { src: 'https://unn.ua/img/2022/11/01/1700239100-1563-large.webp', alt: 'Кит' },
+    { src: 'https://zn.ua/img/forall/u/14/3/%D0%BA%D0%B8%D1%82%D1%8B.jpg', alt: 'Кит' },
+    { src: 'https://babel.ua/static/content/nf3ydfsy/thumbs/660x371/c/05/7f2111cbef86a223862e0fdd2577705c.jpg?v=6979, alt: 'Кит' },
+    { src: 'https://santmat.net.ua/wp-content/uploads/2024/01/img_3759.jpeg', alt: 'Кит' }
   ];
 
   return (
     <main className="container px-4 py-4 flex-grow-1">
       <article>
-        <h2 className="h2 text-success mb-4">Фотогалерея зайців</h2>
+        <h2 className="h2 text-success mb-4">Фотогалерея китів</h2>
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
             {images.map((_, index) => (

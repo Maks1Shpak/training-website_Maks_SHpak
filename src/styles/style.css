@@ -1,10 +1,10 @@
 /* Змінні кольорів та значень */
 :root {
-  --color-primary: #28a745;
-  --color-primary-dark: #155724;
-  --color-bg-light: #d4edda;
-  --color-bg-medium: #c3e6cb;
-  --color-bg-hover: #b1dfbb;
+  --color-primary: #0d6efd;
+  --color-primary-dark: #0b56c7;
+  --color-bg-light: #d6d4ed;
+  --color-bg-medium: #c3c4e6;
+  --color-bg-hover: #b1bcdf;
   --spacing-base: 1rem;
   --header-height: 60px;
   --transition-base: 0.2s ease;
