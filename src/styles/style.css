@@ -1,10 +1,10 @@
 /* Змінні кольорів та значень */
 :root {
-  --color-primary: #0d6efd;
-  --color-primary-dark: #0b56c7;
-  --color-bg-light: #d6d4ed;
-  --color-bg-medium: #c3c4e6;
-  --color-bg-hover: #b1bcdf;
+  --color-primary: #390dfd;
+  --color-primary-dark: #0609b8;
+  --color-bg-light: #d4d4ed;
+  --color-bg-medium: #c8c3e6;
+  --color-bg-hover: #b4b1df;
   --spacing-base: 1rem;
   --header-height: 60px;
   --transition-base: 0.2s ease;
@@ -191,7 +191,7 @@ footer {
 }
 
 .carousel-indicators button {
-  border: 2px solid #28a745 !important;
+  border: 2px solid #3b28a7 !important;
   border-radius: 50% !important;
   height: 20px !important;
   margin: 0 12px !important;
@@ -200,7 +200,7 @@ footer {
 }
 
 .carousel-indicators button.active {
-  background-color: #155724;
+  background-color: #1f1557;
   opacity: 1;
 }
 
@@ -215,7 +215,7 @@ footer {
 }
 
 .carousel-indicators .active {
-  background-color: #28a745;
+  background-color: #2a28a7;
   opacity: 1;
   transform: scale(1.2);
 }

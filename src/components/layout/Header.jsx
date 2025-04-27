@@ -17,13 +17,13 @@ function Header() {
   };
 
   return (
-    <header className="text-center bg-success text-white">
+    <header className="text-center bg-primary text-white">
       <div className="container-fluid header-container">
         <div className="logo-container">
           <Link to="/" className="text-white text-decoration-none d-flex align-items-center">
             <img 
-              src="/images/european-hare-6121jpg.webp" 
-              alt="Заєць" 
+              src="https://img.freepik.com/free-photo/humpback-whale_181624-2020.jpg?semt=ais_hybrid&w=740" 
+              alt="кит" 
               className="site-logo rounded-circle me-2"
             />
             <span className="fs-4">Сайт про китів</span>
