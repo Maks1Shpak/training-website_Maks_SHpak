@@ -1,52 +1,64 @@
 /* Custom Green Theme for Rabbit Website */
 
+/* Видалено стилі, специфічні для Bootstrap */
+
+/* Додано або збережено стилі для кастомізації TailwindCSS */
 .custom-blue-theme {
-  background-color: #ffffff; /* Light green background */
-  color: #151657; /* Dark green text */
+  background-color: #1e3a8a; /* Tailwind клас bg-blue-800 */
+  color: #ffffff; /* Tailwind клас text-white */
 }
- 
-.custom-blue-theme a.nav-link {
-  color: #3128a7; /* Bright green for navigation links */
-  text-decoration: none;
-}
- 
-.custom-blue-theme a.nav-link:hover {
-  color: #151957; /* Darker green on hover */
-  text-decoration: underline;
-}
- 
-.custom-blue-theme .list-group-item {
-  background-color: #c3c4e6; /* Pale green for list items */
-  color: #161557;
-}
- 
-.custom-blue-theme .list-group-item:hover {
-  background-color: #b1b8df; /* Slightly darker green on hover */
-}
+
+/* Інші кастомні стилі */
 
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0;
+  background: linear-gradient(to bottom, #e0e7ff, #ffffff);
 }
 
 main {
   flex: 1 0 auto;
 }
 
+main article {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main article h2 {
+  color: #2a28a7;
+  border-bottom: 2px solid #2a28a7;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+main article ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+main article ul li {
+  margin-bottom: 10px;
+}
+
 footer {
-  flex-shrink: 0;
-  background-color: #2a28a7; /* Green footer */
+  background: linear-gradient(to right, #2a28a7, #1e3a8a);
   color: white;
-  padding: 10px 0;
+  padding: 15px 0;
   border-top: 5px solid #191557;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 /* Carousel Styles */
 .carousel-item {
   border-radius: 25px;
   overflow: hidden;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .carousel-item img {
@@ -54,16 +66,23 @@ footer {
   width: 100%;
   object-fit: cover;
   border-radius: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   width: 70px;
   height: 70px;
-  background-color: rgba(200, 200, 200, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   padding: 18px;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border: 2px solid #2a28a7;
   transition: transform 0.2s;
 }
 
@@ -81,11 +100,17 @@ footer {
   border: 2px solid #3128a7 !important;
   background-color: white !important;
   opacity: 0.8 !important;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .carousel-indicators button.active {
   background-color: #161557 !important;
   opacity: 1 !important;
+}
+
+.carousel-indicators button:hover {
+  transform: scale(1.2);
+  background-color: #ffcc00; /* Золотий колір при наведенні */
 }
 
 .carousel-control-prev,
@@ -96,8 +121,8 @@ footer {
 
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
-  transform: scale(1.1);
-  background-color: rgb(148, 148, 148);
+  transform: scale(1.2);
+  background-color: #2a28a7;
 }
 
 .carousel-indicators [data-bs-target]:hover {
@@ -112,4 +137,56 @@ footer {
 
 #carouselExampleIndicators {
   margin-bottom: 3rem;
+}
+
+/* Додано тіні для елементів */
+header {
+  background: linear-gradient(to right, #1e3a8a, #2a28a7);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Додано анімацію для кнопок */
+nav a {
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffcc00; /* Золотий колір при наведенні */
+  transform: scale(1.1);
+}
+
+/* Додано стилі для кнопок */
+button {
+  background-color: #2a28a7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e3a8a;
+  transform: scale(1.05);
+}
+
+/* Додано стилі для заголовків */
+h1, h2 {
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Додано стилі для списків */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
 }

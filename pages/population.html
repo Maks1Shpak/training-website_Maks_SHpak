@@ -3,49 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ареал зайців">
+  <meta name="description" content="Ареал китів">
   <title>Ареал китів</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="custom-blue-theme">
+<body class="d-flex flex-column min-vh-100">
   <header class="text-center bg-primary text-white py-3">
-    <h1>Ареал китів</h1>
-    <nav class="nav justify-content-center">
-      <a href="../index.html" class="nav-link text-white">Головна</a>
-      <a href="morphology.html" class="nav-link text-white">Зовнішній вигляд</a>
-      <a href="nutrition.html" class="nav-link text-white">Харчування</a>
-      <a href="photo.html" class="nav-link text-white">Фотогалерея</a>
+    <h1 class="fs-2 fw-bold">Ареал китів</h1>
+    <nav class="d-flex justify-content-center gap-3 mt-2">
+      <a href="../index.html" class="text-white text-decoration-underline">Головна</a>
+      <a href="morphology.html" class="text-white text-decoration-underline">Зовнішній вигляд</a>
+      <a href="nutrition.html" class="text-white text-decoration-underline">Харчування</a>
+      <a href="photo.html" class="text-white text-decoration-underline">Фотогалерея</a>
     </nav>
   </header>
 
-  <main class="container py-4">
+  <main class="container py-4 flex-grow-1">
     <div class="row">
-      <div class="col-md-3">
-        <aside class="sticky-top pt-3">
-          <nav class="nav flex-column">
-            <h4>Зміст</h4>
-            <a href="#continentsList" class="nav-link" data-bs-toggle="collapse">Континенти</a>
-            <a href="#subcontinentsList" class="nav-link" data-bs-toggle="collapse">Субконтиненти</a>
-            <a href="#countriesList" class="nav-link" data-bs-toggle="collapse">Країни</a>
-            <a href="#introducedList" class="nav-link" data-bs-toggle="collapse">Регіони</a>
-            <a href="#biogeographicList" class="nav-link" data-bs-toggle="collapse">Біогеографічні зони</a>
-            <a href="#biomesList" class="nav-link" data-bs-toggle="collapse">Океани</a>
-          </nav>
-        </aside>
-      </div>
+      <aside class="col-md-3 mb-4">
+        <nav class="bg-light p-3 rounded shadow">
+          <h4 class="text-primary fw-bold mb-3">Зміст</h4>
+          <ul class="list-unstyled">
+            <li><a href="#continents" class="text-primary text-decoration-none d-block mb-2">Континенти</a></li>
+            <li><a href="#subcontinents" class="text-primary text-decoration-none d-block mb-2">Субконтиненти</a></li>
+            <li><a href="#countries" class="text-primary text-decoration-none d-block mb-2">Країни</a></li>
+            <li><a href="#biomes" class="text-primary text-decoration-none d-block mb-2">Океани</a></li>
+          </ul>
+        </nav>
+      </aside>
       <div class="col-md-9">
-        <h2 class="h2 text-primaryАреал</h2>
-        
-        <article class="mt-4">
-          <section id="continents">
+        <article>
+          <section id="continents" class="mb-4">
             <h3>
-              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#continentsList">
+              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#continentsList" aria-expanded="false">
                 Континенти
               </button>
             </h3>
             <div class="collapse" id="continentsList">
-              <ul class="list-group mb-3">
+              <ul class="list-group mt-2">
                 <li class="list-group-item">Африка</li>
                 <li class="list-group-item">Південна Америка</li>
                 <li class="list-group-item">Австралія і Океанія</li>
@@ -56,33 +52,31 @@
               </ul>
             </div>
           </section>
-
-          <section id="subcontinents">
+          <section id="subcontinents" class="mb-4">
             <h3>
-              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#subcontinentsList">
+              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#subcontinentsList" aria-expanded="false">
                 Субконтиненти
               </button>
             </h3>
             <div class="collapse" id="subcontinentsList">
-              <ul class="list-group mb-3">
+              <ul class="list-group mt-2">
                 <li class="list-group-item">Субсахарська Африка</li>
                 <li class="list-group-item">Карибські острови</li>
                 <li class="list-group-item">Південна Азія</li>
-                <li class="list-group-item">Східна та західна азія</li>
+                <li class="list-group-item">Східна та західна Азія</li>
                 <li class="list-group-item">Центральна Америка</li>
                 <li class="list-group-item">Північна Африка</li>
               </ul>
             </div>
           </section>
-
-          <section id="countries">
+          <section id="countries" class="mb-4">
             <h3>
-              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#countriesList">
+              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#countriesList" aria-expanded="false">
                 Країни
               </button>
             </h3>
             <div class="collapse" id="countriesList">
-              <ul class="list-group mb-3">
+              <ul class="list-group mt-2">
                 <li class="list-group-item">Ангола</li>
                 <li class="list-group-item">Аргентина</li>
                 <li class="list-group-item">Австралія</li>
@@ -115,7 +109,7 @@
                 <li class="list-group-item">Ірландія</li>
                 <li class="list-group-item">Японія</li>
                 <li class="list-group-item">Кенія</li>
-                <li class="list-group-item">Магадаскар</li>
+                <li class="list-group-item">Мадагаскар</li>
                 <li class="list-group-item">Маврикій</li>
                 <li class="list-group-item">Мексика</li>
                 <li class="list-group-item">Марокко</li>
@@ -124,49 +118,14 @@
               </ul>
             </div>
           </section>
-
-          <section id="introduced">
+          <section id="biomes" class="mb-4">
             <h3>
-              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#introducedList">
-                Регіони
-              </button>
-            </h3>
-            <div class="collapse" id="introducedList">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Гренландія</li>
-                <li class="list-group-item">Камчатський півострів</li>
-              </ul>
-            </div>
-          </section>
-
-          <section id="biogeographic">
-            <h3>
-              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#biogeographicList">
-                Біогеографічні зони
-              </button>
-            </h3>
-            <div class="collapse" id="biogeographicList">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Антарктична екозона</li>
-                <li class="list-group-item">Неотропіка</li>
-                <li class="list-group-item">Палеарктика</li>
-                <li class="list-group-item">Неарктика</li>
-                <li class="list-group-item">Нотогея</li>
-                <li class="list-group-item">Океанійська екозона</li>
-                <li class="list-group-item">Індомалайя</li>
-                <li class="list-group-item">Афротропіка</li>
-              </ul>
-            </div>
-          </section>
-
-          <section id="biomes">
-            <h3>
-              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#biomesList">
+              <button class="btn btn-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#biomesList" aria-expanded="false">
                 Океани
               </button>
             </h3>
             <div class="collapse" id="biomesList">
-              <ul class="list-group">
+              <ul class="list-group mt-2">
                 <li class="list-group-item">Тихий океан</li>
                 <li class="list-group-item">Атлантичний океан</li>
               </ul>
@@ -177,9 +136,11 @@
     </div>
   </main>
 
-  <footer class="text-center bg-dark text-white py-2">
+  <footer class="text-center bg-dark text-white py-3">
     <p>&copy; 2025 Сайт про китів</p>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Підключення Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
