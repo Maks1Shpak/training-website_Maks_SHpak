@@ -39,6 +39,9 @@ function Header() {
             { path: '/nutrition', label: 'Харчування китів' },
             { path: '/population', label: 'Ареал китів' },
             { path: '/photo', label: 'Фотографії китів' },
+            <Link to="/rehabilitation" className={`nav-link text-white ${location.pathname === '/rehabilitation' ? 'active' : ''}`}>
+            Реабілітація
+          </Link>
           ].map(({ path, label }) => (
             <Link
               key={path}
