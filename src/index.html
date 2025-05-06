@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реабілітація ссавців</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Реабілітація ссавців</h1>
+    <button id="addMammalBtn" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#mammalModal">Додати ссавця</button>
+    <div id="spinner" class="text-center my-3 d-none">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Завантаження...</span>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Ім'я</th>
+          <th>Вік (роки)</th>
+          <th>Розмір</th>
+          <th>Вага (кг)</th>
+          <th>Стать</th>
+          <th>Опис</th>
+          <th>Дата додавання</th>
+          <th>Дії</th>
+        </tr>
+      </thead>
+      <tbody id="mammalTableBody">
+        <!-- Дані будуть завантажені динамічно -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="mammalModal" tabindex="-1" aria-labelledby="mammalModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mammalModalLabel">Додати/Редагувати ссавця</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="mammalForm">
+            <!-- Поля форми -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Ім'я</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="age" class="form-label">Вік (роки)</label>
+              <input type="number" class="form-control" id="age" required>
+            </div>
+            <div class="mb-3">
+              <label for="size" class="form-label">Розмір</label>
+              <input type="text" class="form-control" id="size" required>
+            </div>
+            <div class="mb-3">
+              <label for="weight" class="form-label">Вага (кг)</label>
+              <input type="number" class="form-control" id="weight" required>
+            </div>
+            <div class="mb-3">
+              <label for="gender" class="form-label">Стать</label>
+              <select class="form-select" id="gender" required>
+                <option value="Чоловіча">Чоловіча</option>
+                <option value="Жіноча">Жіноча</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Опис</label>
+              <textarea class="form-control" id="description" rows="3" required></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+          <button type="button" id="saveMammalBtn" class="btn btn-primary">Зберегти</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Сповіщення</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        <!-- Текст сповіщення -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
