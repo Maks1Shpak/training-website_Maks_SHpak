@@ -21,6 +21,9 @@ function Home() {
         <li className="list-group-item">
           <Link to="/photo" className="text-primary text-decoration-none">Фотогалерея</Link> - Колекція фотографій китів
         </li>
+         <li className="list-group-item">
+          <Link to="/rehabilitation" className="text-primary text-decoration-none">Реабілітація</Link> - Сторінка про реабілітацію китів
+        </li>
       </ul>
     </section>
   </main>

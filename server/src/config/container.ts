@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { Container } from 'inversify';
 import { IDatabase } from '../interfaces/IDatabase';
 import { MongoDatabase } from '../database/MongoDatabase';
-import { RabbitRepository } from '../repositories/RabbitRepository';
+import { WhaleRepository } from '../repositories/WhaleRepository';
 import { TYPES } from '../types/types';
 import { NODE_ENV } from './env';
 
@@ -19,10 +19,10 @@ container.bind<IConfig>('Config').toConstantValue({
     nodeEnv: NODE_ENV,
 });
 
-// Зв'язуємо інтерфейс бази даних з його реалізацією як одиночний екземпляр (singleton)
+// Зв'язуємо інтерфейс бази даних з його реалізацією як одиничний екземпляр (singleton)
 container.bind<IDatabase>(TYPES.IDatabase).to(MongoDatabase).inSingletonScope();
 
 // Пряме зв'язування конкретного класу RabbitRepository як одиночного екземпляру
-container.bind(RabbitRepository).toSelf().inSingletonScope();
+container.bind(WhaleRepository).toSelf().inSingletonScope();
 
 export { container };

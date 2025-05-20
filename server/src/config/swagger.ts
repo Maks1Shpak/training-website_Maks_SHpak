@@ -4,9 +4,9 @@ export const swaggerSpec = {
     openapi: '3.0.0',
     // Загальна інформація про API
     info: {
-        title: 'API Сайту про Зайців',
+        title: 'API Сайту про Китів',
         version: '1.0.0',
-        description: 'Документація API для Сайту про Зайців',
+        description: 'Документація API для Сайту про Китів',
     },
     // Налаштування серверів для тестування API
     servers: [
@@ -20,18 +20,18 @@ export const swaggerSpec = {
     ],
     // Визначення кінцевих точок (endpoints) REST API та операцій з ними
     paths: {
-        '/api/rabbits': {
-            // GET запит для отримання всіх зайців
+        '/api/whales': {
+            // GET запит для отримання всіх китів
             get: {
-                summary: 'Отримати всіх зайців',
+                summary: 'Отримати всіх китів',
                 responses: {
                     '200': {
-                        description: 'Список всіх зайців',
+                        description: 'Список всіх китів',
                         content: {
                             'application/json': {
                                 schema: {
                                     type: 'array',
-                                    items: { $ref: '#/components/schemas/Rabbit' },
+                                    items: { $ref: '#/components/schemas/Whale' },
                                 },
                             },
                         },
@@ -39,23 +39,23 @@ export const swaggerSpec = {
                 },
             },
 
-            // POST запит для створення нового зайця
+            // POST запит для створення нового кита
             post: {
-                summary: 'Створити нового зайця',
+                summary: 'Створити нового кита',
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Whale' },
                         },
                     },
                 },
                 responses: {
                     '201': {
-                        description: "Створений об'єкт зайця",
+                        description: "Створений об'єкт кита",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Whale' },
                             },
                         },
                     },
@@ -63,112 +63,112 @@ export const swaggerSpec = {
             },
         },
 
-        // Операції для конкретного зайця за ID
-        '/api/rabbits/{id}': {
-            // GET запит для отримання зайця за ID
+        // Операції для конкретного кита за ID
+        '/api/whales/{id}': {
+            // GET запит для отримання кита за ID
             get: {
-                summary: 'Отримати зайця за ID',
+                summary: 'Отримати кита за ID',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID кита',
                     },
                 ],
                 responses: {
                     '200': {
-                        description: "Об'єкт зайця",
+                        description: "Об'єкт кита",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Whale' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Кита не знайдено' },
                 },
             },
 
-            // PUT запит для повного оновлення зайця за ID
+            // PUT запит для повного оновлення кита за ID
             put: {
-                summary: 'Повністю оновити зайця',
+                summary: 'Повністю оновити кита',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID кита',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Whale' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт кита",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Whale' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Кита не знайдено' },
                 },
             },
-            // PATCH запит для часткового оновлення зайця за ID
+            // PATCH запит для часткового оновлення кита за ID
             patch: {
-                summary: 'Частково оновити зайця',
+                summary: 'Частково оновити кита',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID кита',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Whale' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт кита",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Whale' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Кита не знайдено' },
                 },
             },
-            // DELETE запит для видалення даних про зайця за ID
+            // DELETE запит для видалення даних про кита за ID
             delete: {
-                summary: 'Видалити дані про зайця',
+                summary: 'Видалити дані про кита',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID кита',
                     },
                 ],
                 responses: {
                     '200': { description: 'Повідомлення про успішне видалення' },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Кита не знайдено' },
                 },
             },
         },
@@ -176,38 +176,21 @@ export const swaggerSpec = {
 
     // Визначення компонентів для повторного використання
     components: {
-        // Схеми даних
         schemas: {
-            // Схема об'єкта Заєць
-            Rabbit: {
+            Whale: {
                 type: 'object',
-                required: ['name', 'age', 'height', 'weight', 'gender'],
+                required: ['name', 'age', 'length', 'weight', 'gender', 'planktonEaten'],
                 properties: {
-                    name: {
-                        type: 'string',
-                        description: "Ім'я зайця",
-                    },
-                    age: {
+                    name: { type: 'string', description: "Ім'я кита" },
+                    age: { type: 'number', description: 'Вік кита у роках' },
+                    length: { type: 'number', description: 'Довжина кита в сантиметрах' },
+                    weight: { type: 'number', description: 'Вага кита в кілограмах' },
+                    gender: { type: 'string', enum: ['male', 'female'], description: 'Стать кита' },
+                    planktonEaten: {
                         type: 'number',
-                        description: 'Вік зайця у роках',
+                        description: "Кількість з'їденого планктону (кг)",
                     },
-                    height: {
-                        type: 'number',
-                        description: 'Висота зайця в сантиметрах',
-                    },
-                    weight: {
-                        type: 'number',
-                        description: 'Вага зайця в кілограмах',
-                    },
-                    gender: {
-                        type: 'string',
-                        enum: ['male', 'female'],
-                        description: 'Стать зайця',
-                    },
-                    description: {
-                        type: 'string',
-                        description: "Опис зайця (необов'язкове поле)",
-                    },
+                    description: { type: 'string', description: "Опис кита (необов'язкове поле)" },
                 },
             },
         },

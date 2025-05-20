@@ -21,10 +21,11 @@ function Rehabilitation() {
   const [formData, setFormData] = useState({
     name: '',
     age: '',
-    height: '',
+    length: '',
     weight: '',
     gender: 'male',
-    description: ''
+    description: '',
+    planktonEaten: ''
   });
 
   useEffect(() => {
@@ -59,11 +60,12 @@ function Rehabilitation() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     let processedValue = value;
-    
-    if (['age', 'height', 'weight'].includes(name)) {
+
+    // Оновлено: враховано всі числові поля, включаючи length та planktonEaten
+    if (['age', 'length', 'weight', 'planktonEaten'].includes(name)) {
       processedValue = value === '' ? '' : Number(value);
     }
-    
+
     setFormData({
       ...formData,
       [name]: processedValue
@@ -74,10 +76,11 @@ function Rehabilitation() {
     setFormData({
       name: '',
       age: '',
-      height: '',
+      length: '',
       weight: '',
       gender: 'male',
-      description: ''
+      description: '',
+      planktonEaten: ''
     });
     setShowAddModal(true);
   };
@@ -87,10 +90,11 @@ function Rehabilitation() {
     setFormData({
       name: whale.name,
       age: whale.age,
-      height: whale.height,
+      length: whale.length,
       weight: whale.weight,
       gender: whale.gender,
-      description: whale.description || ''
+      description: whale.description || '',
+      planktonEaten: whale.planktonEaten ?? ''
     });
     setShowEditModal(true);
   };
@@ -179,6 +183,8 @@ function Rehabilitation() {
           className="btn btn-success" 
           onClick={handleShowAddModal}
           disabled={loading}
+          data-bs-toggle="modal"
+          data-bs-target="#addWhaleModal"
         >
           Додати кита
         </button>
@@ -238,8 +244,9 @@ function Rehabilitation() {
               <tr>
                 <th>Ім'я</th>
                 <th>Вік (роки)</th>
-                <th>Висота (см)</th>
+                <th>Довжина (см)</th>
                 <th>Вага (кг)</th>
+                <th>Кількість з'їденого планктону (кг)</th>
                 <th>Стать</th>
                 <th>Опис</th>
                 <th>Дата додавання</th>
@@ -251,8 +258,9 @@ function Rehabilitation() {
                 <tr key={whale._id}>
                   <td>{whale.name}</td>
                   <td>{whale.age}</td>
-                  <td>{whale.height}</td>
+                  <td>{whale.length}</td>
                   <td>{whale.weight}</td>
+                  <td>{whale.planktonEaten}</td>
                   <td>{whale.gender === 'male' ? 'Самець' : 'Самиця'}</td>
                   <td>{whale.description}</td>
                   <td>{whale.dateAdded ? formatDate(whale.dateAdded) : 'Н/Д'}</td>
@@ -260,16 +268,36 @@ function Rehabilitation() {
                     <button
                       type="button"
                       className="btn btn-outline-primary btn-sm me-2"
-                      onClick={() => handleShowEditModal(whale)}
+                      onClick={() => {
+                        handleShowEditModal(whale);
+                        setTimeout(() => {
+                          const modal = window.bootstrap?.Modal
+                            ? new window.bootstrap.Modal(document.getElementById('editWhaleModal'))
+                            : new Toast(document.getElementById('editWhaleModal'));
+                          modal.show();
+                        }, 0);
+                      }}
                       disabled={loading}
+                      data-bs-toggle="modal"
+                      data-bs-target="#editWhaleModal"
                     >
                       Редагувати
                     </button>
                     <button
                       type="button"
                       className="btn btn-outline-danger btn-sm"
-                      onClick={() => handleShowDeleteModal(whale)}
+                      onClick={() => {
+                        handleShowDeleteModal(whale);
+                        setTimeout(() => {
+                          const modal = window.bootstrap?.Modal
+                            ? new window.bootstrap.Modal(document.getElementById('deleteWhaleModal'))
+                            : new Toast(document.getElementById('deleteWhaleModal'));
+                          modal.show();
+                        }, 0);
+                      }}
                       disabled={loading}
+                      data-bs-toggle="modal"
+                      data-bs-target="#deleteWhaleModal"
                     >
                       Видалити
                     </button>
@@ -281,8 +309,319 @@ function Rehabilitation() {
         </section>
       )}
 
-      {/* Модальні вікна для китів */}
-      {/* ...existing modal code updated for whales... */}
+      {/* Модальне вікно для додавання кита */}
+      <div
+        className="modal fade"
+        id="addWhaleModal"
+        tabIndex="-1"
+        aria-labelledby="addWhaleModalLabel"
+        aria-hidden="true"
+        style={{ display: showAddModal ? 'block' : 'none' }}
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <form onSubmit={handleAddWhale}>
+              <div className="modal-header">
+                <h5 className="modal-title" id="addWhaleModalLabel">Додати кита</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Закрити"
+                  onClick={() => setShowAddModal(false)}
+                ></button>
+              </div>
+              <div className="modal-body">
+                {/* Поля форми */}
+                <div className="mb-3">
+                  <label htmlFor="name" className="form-label">Ім'я</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="age" className="form-label">Вік (роки)</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="age"
+                    name="age"
+                    value={formData.age}
+                    onChange={handleInputChange}
+                    required
+                    min={0}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="length" className="form-label">Довжина (см)</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="length"
+                    name="length"
+                    value={formData.length}
+                    onChange={handleInputChange}
+                    required
+                    min={0}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="weight" className="form-label">Вага (кг)</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="weight"
+                    name="weight"
+                    value={formData.weight}
+                    onChange={handleInputChange}
+                    required
+                    min={0}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="planktonEaten" className="form-label">Кількість з'їденого планктону (кг)</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="planktonEaten"
+                    name="planktonEaten"
+                    value={formData.planktonEaten}
+                    onChange={handleInputChange}
+                    required
+                    min={0}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="gender" className="form-label">Стать</label>
+                  <select
+                    className="form-select"
+                    id="gender"
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="male">Самець</option>
+                    <option value="female">Самиця</option>
+                  </select>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="description" className="form-label">Опис</label>
+                  <textarea
+                    className="form-control"
+                    id="description"
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                  onClick={() => setShowAddModal(false)}
+                >
+                  Скасувати
+                </button>
+                <button type="submit" className="btn btn-success" disabled={loading}>
+                  Додати
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* Модальне вікно для редагування кита */}
+      <div
+        className="modal fade"
+        id="editWhaleModal"
+        tabIndex="-1"
+        aria-labelledby="editWhaleModalLabel"
+        aria-hidden="true"
+        style={{ display: showEditModal ? 'block' : 'none' }}
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <form onSubmit={handleUpdateWhale}>
+              <div className="modal-header">
+                <h5 className="modal-title" id="editWhaleModalLabel">Редагувати кита</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Закрити"
+                  onClick={() => setShowEditModal(false)}
+                ></button>
+              </div>
+              <div className="modal-body">
+                {/* Поля форми аналогічно до додавання */}
+                <div className="mb-3">
+                  <label htmlFor="edit-name" className="form-label">Ім'я</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="edit-name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="edit-age" className="form-label">Вік (роки)</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="edit-age"
+                    name="age"
+                    value={formData.age}
+                    onChange={handleInputChange}
+                    required
+                    min={0}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="edit-length" className="form-label">Довжина (см)</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="edit-length"
+                    name="length"
+                    value={formData.length}
+                    onChange={handleInputChange}
+                    required
+                    min={0}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="edit-weight" className="form-label">Вага (кг)</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="edit-weight"
+                    name="weight"
+                    value={formData.weight}
+                    onChange={handleInputChange}
+                    required
+                    min={0}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="edit-planktonEaten" className="form-label">Кількість з'їденого планктону (кг)</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="edit-planktonEaten"
+                    name="planktonEaten"
+                    value={formData.planktonEaten}
+                    onChange={handleInputChange}
+                    required
+                    min={0}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="edit-gender" className="form-label">Стать</label>
+                  <select
+                    className="form-select"
+                    id="edit-gender"
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="male">Самець</option>
+                    <option value="female">Самиця</option>
+                  </select>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="edit-description" className="form-label">Опис</label>
+                  <textarea
+                    className="form-control"
+                    id="edit-description"
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                  onClick={() => setShowEditModal(false)}
+                >
+                  Скасувати
+                </button>
+                <button type="submit" className="btn btn-success" disabled={loading}>
+                  Зберегти
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* Модальне вікно для видалення кита */}
+      <div
+        className="modal fade"
+        id="deleteWhaleModal"
+        tabIndex="-1"
+        aria-labelledby="deleteWhaleModalLabel"
+        aria-hidden="true"
+        style={{ display: showDeleteModal ? 'block' : 'none' }}
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="deleteWhaleModalLabel">Видалити кита</h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Закрити"
+                onClick={() => setShowDeleteModal(false)}
+              ></button>
+            </div>
+            <div className="modal-body">
+              Ви впевнені, що хочете видалити кита "{whaleToDelete?.name}"?
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onClick={() => setShowDeleteModal(false)}
+              >
+                Скасувати
+              </button>
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={handleDeleteWhale}
+                disabled={loading}
+              >
+                Видалити
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
