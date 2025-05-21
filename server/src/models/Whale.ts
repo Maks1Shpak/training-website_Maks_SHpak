@@ -7,6 +7,8 @@ export interface IWhale extends Document {
     weight: number;
     gender: string;
     planktonEaten: number;
+    description?: string;
+    dateAdded: Date; // ДОДАНО
 }
 
 const WhaleSchema = new Schema<IWhale>({
@@ -15,7 +17,9 @@ const WhaleSchema = new Schema<IWhale>({
     length: { type: Number, required: true },
     weight: { type: Number, required: true },
     gender: { type: String, required: true },
-    planktonEaten: { type: Number, required: true }, // обов'язкове поле, без default!
+    planktonEaten: { type: Number, required: true },
+    description: { type: String, default: '' },
+    dateAdded: { type: Date, default: Date.now }, // ДОДАНО
 });
 
 export const Whale = model<IWhale>('Whale', WhaleSchema);

@@ -6,7 +6,7 @@ const Whale = require('../models/Whale');
 
 router.put('/api/whales/:id', async (req, res) => {
   const id = req.params.id;
-  const { name, species, age } = req.body;
+  const { name, species, age, description = '' } = req.body;
 
   // Перевірка наявності всіх необхідних полів
   if (!name || !species || typeof age !== 'number') {
@@ -24,9 +24,10 @@ router.put('/api/whales/:id', async (req, res) => {
     whale.name = name;
     whale.species = species;
     whale.age = age;
+    whale.description = description;
     await whale.save();
 
-    return res.status(200).json(whale);
+    return res.status(200).json({ ...whale.toObject(), description: whale.description ?? '' });
   } catch (err) {
     return res.status(500).json({ error: 'Server error' });
   }

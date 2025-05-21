@@ -17,6 +17,7 @@ export class WhaleRepository {
 
     // Метод для створення нового кита в базі даних
     public async create(whaleData: IWhale): Promise<IWhale> {
+        // description може бути відсутнім, але mongoose сам підставить default: ''
         const whale = new Whale(whaleData);
         return whale.save();
     }

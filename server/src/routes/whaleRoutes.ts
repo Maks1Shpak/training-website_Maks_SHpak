@@ -55,29 +55,24 @@ router.post('/', (async (req: Request, res: Response) => {
 // Обробка HTTP-запиту PUT /:id - повне оновлення запису кита
 router.put('/:id', (async (req: Request, res: Response) => {
     try {
-        // Перевірка наявності всіх обов'язкових полів для PUT запиту
+        // Видаліть height зі списку обов'язкових полів
         const requiredFields = ['name', 'age', 'length', 'weight', 'gender', 'planktonEaten'];
         const missingFields = requiredFields.filter(field => !(field in req.body));
 
-        // Якщо є відсутні поля, повертаємо помилку 400 Bad Request
         if (missingFields.length > 0) {
             return res.status(400).json({
                 message: `Відсутні обов'язкові поля: ${missingFields.join(', ')}`,
             });
         }
 
-        // Оновлюємо кита з вказаним ID
         const whale = await whaleRepository.update(req.params.id, req.body);
         if (whale) {
             return res.json(whale);
         } else {
-            // Якщо кит не знайдений, повертаємо 404 помилку
             return res.status(404).json({ message: 'Запис кита не знайдено' });
         }
     } catch (error) {
-        // Обробка помилки
         const errorMessage = error instanceof Error ? error.message : 'Виникла невідома помилка';
-        // Виправлено: завжди повертати 500 для неочікуваних помилок
         return res.status(500).json({ message: errorMessage });
     }
 }) as unknown as (req: Request, res: Response) => void);
