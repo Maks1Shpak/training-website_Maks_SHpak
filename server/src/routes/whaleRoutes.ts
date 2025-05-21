@@ -77,7 +77,8 @@ router.put('/:id', (async (req: Request, res: Response) => {
     } catch (error) {
         // Обробка помилки
         const errorMessage = error instanceof Error ? error.message : 'Виникла невідома помилка';
-        return res.status(400).json({ message: errorMessage });
+        // Виправлено: завжди повертати 500 для неочікуваних помилок
+        return res.status(500).json({ message: errorMessage });
     }
 }) as unknown as (req: Request, res: Response) => void);
 

@@ -1,5 +1,5 @@
 import { injectable } from 'inversify';
-import { Whale, IWhale } from '../models/whale';
+import { Whale, IWhale } from '../models/Whale';
 
 // Клас-репозиторій для роботи з китами
 // Анотація injectable дозволяє впровадити цей репозиторій через IoC контейнер
@@ -36,6 +36,4 @@ export class WhaleRepository {
     public async patch(id: string, whaleData: Partial<IWhale>): Promise<IWhale | null> {
         return Whale.findByIdAndUpdate(id, { $set: whaleData }, { new: true });
     }
-
-    // Всі методи працюють з IWhale, який містить length, а не height
 }

@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../src/server';
-import { Whale } from '../src/models/whale';
+import { Whale } from '../src/models/Whale';
 import { container } from '../src/config/container';
 import { TYPES } from '../src/types/types';
 import { IDatabase } from '../src/interfaces/IDatabase';
@@ -69,6 +69,7 @@ describe('API вебдодатку сайту про китів', () => {
                 weight: 120000,
                 gender: 'male' as const,
                 description: 'Найбільший кит у світі',
+                planktonEaten: 1000000, // ДОДАНО
             };
 
             // Виконуємо POST-запит для створення запису про кита
@@ -105,6 +106,7 @@ describe('API вебдодатку сайту про китів', () => {
                 weight: 40000,
                 gender: 'female',
                 description: 'Кит з горбатою спиною',
+                planktonEaten: 500000, // ДОДАНО
             });
             await testWhale.save();
 
@@ -132,6 +134,7 @@ describe('API вебдодатку сайту про китів', () => {
                 weight: 57000,
                 gender: 'male',
                 description: 'Кит з великою головою',
+                planktonEaten: 700000, // ДОДАНО
             });
             const savedWhale = await testWhale.save();
 
@@ -164,6 +167,7 @@ describe('API вебдодатку сайту про китів', () => {
                 weight: 50000,
                 gender: 'male',
                 description: 'Початковий опис',
+                planktonEaten: 200000, // ДОДАНО
             });
             const savedWhale = await testWhale.save();
 
@@ -175,6 +179,7 @@ describe('API вебдодатку сайту про китів', () => {
                 weight: 120000,
                 gender: 'female',
                 description: 'Оновлений опис',
+                planktonEaten: 250000, // ДОДАНО
             };
 
             // Виконуємо PUT-запит для повного оновлення запису про кита
@@ -204,6 +209,7 @@ describe('API вебдодатку сайту про китів', () => {
                 weight: 50000,
                 gender: 'male',
                 description: 'Початковий опис',
+                planktonEaten: 200000, // ДОДАНО
             });
             const savedWhale = await testWhale.save();
 
@@ -214,6 +220,7 @@ describe('API вебдодатку сайту про китів', () => {
                 // length і weight відсутні
                 gender: 'female',
                 description: 'Оновлений опис',
+                planktonEaten: 250000, // ДОДАНО, але length і weight все одно відсутні
             };
 
             // Виконуємо PUT-запит з неповними даними
@@ -244,6 +251,7 @@ describe('API вебдодатку сайту про китів', () => {
                 weight: 50000,
                 gender: 'male',
                 description: 'Початковий опис',
+                planktonEaten: 200000, // ДОДАНО
             });
             const savedWhale = await testWhale.save();
 
@@ -252,6 +260,7 @@ describe('API вебдодатку сайту про китів', () => {
                 name: 'Частково оновлений',
                 age: 30,
                 description: 'Оновлений опис',
+                planktonEaten: 300000, // ДОДАНО
             };
 
             // Виконуємо PATCH-запит
@@ -281,6 +290,7 @@ describe('API вебдодатку сайту про китів', () => {
                 weight: 50000,
                 gender: 'male',
                 description: 'Початковий опис',
+                planktonEaten: 200000, // ДОДАНО
             });
             const savedWhale = await testWhale.save();
 
@@ -291,6 +301,7 @@ describe('API вебдодатку сайту про китів', () => {
                 // length і weight навмисно відсутні
                 gender: 'female',
                 description: 'Оновлений опис',
+                planktonEaten: 250000, // ДОДАНО
             };
 
             // Виконуємо PATCH-запит
@@ -348,6 +359,7 @@ describe('API вебдодатку сайту про китів', () => {
                 weight: 40000,
                 gender: 'female',
                 description: 'Кит з горбатою спиною',
+                planktonEaten: 500000, // ДОДАНО
             });
             const savedWhale = await testWhale.save();
 

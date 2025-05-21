@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Whale } from '../models/whale';
+import { Whale } from '../models/Whale';
 
 // Отримати всіх китів
 export const getWhales = async (_req: Request, res: Response): Promise<Response> => {
